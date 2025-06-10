@@ -123,15 +123,15 @@ TaskMaster AI provides comprehensive project management capabilities with AI-pow
 ### 🚀 New Project Pipeline
 ```mermaid
 graph TD
-    A[/project-setup] --> B[/create-prd]
-    B --> C[/parse-prd]
-    C --> D[/complexity]
+    A[project-setup] --> B[create-prd]
+    B --> C[parse-prd]
+    C --> D[complexity]
     D --> E{Complex tasks?}
-    E -->|Yes| F[/break-down]
-    E -->|No| G[/next-task]
+    E -->|Yes| F[break-down]
+    E -->|No| G[next-task]
     F --> G
     G --> H[Implement]
-    H --> I[/complete-task]
+    H --> I[complete-task]
     I --> J{More tasks?}
     J -->|Yes| G
     J -->|No| K[Project Complete]
@@ -140,15 +140,15 @@ graph TD
 ### 📈 Daily Development Pipeline
 ```mermaid
 graph TD
-    A[Start Day] --> B[/task-status]
-    B --> C[/next-task]
+    A[Start Day] --> B[task-status]
+    B --> C[next-task]
     C --> D{Task clear?}
-    D -->|No| E[/research]
-    D -->|Complex| F[/break-down]
+    D -->|No| E[research]
+    D -->|Complex| F[break-down]
     D -->|Yes| G[Implement]
     E --> G
     F --> C
-    G --> H[/complete-task]
+    G --> H[complete-task]
     H --> I{More time?}
     I -->|Yes| C
     I -->|No| J[End Day]
@@ -157,11 +157,11 @@ graph TD
 ### 🔄 Requirement Change Pipeline  
 ```mermaid
 graph TD
-    A[Requirements Change] --> B[/update-prd]
-    B --> C[/complexity]
+    A[Requirements Change] --> B[update-prd]
+    B --> C[complexity]
     C --> D{New complex tasks?}
-    D -->|Yes| E[/break-down]
-    D -->|No| F[/task-status]
+    D -->|Yes| E[break-down]
+    D -->|No| F[task-status]
     E --> F
     F --> G[Continue Development]
 ```
@@ -169,13 +169,13 @@ graph TD
 ### 🧪 Quality Assurance Pipeline
 ```mermaid
 graph TD
-    A[Weekly Review] --> B[/task-status]
-    B --> C[/complexity]
+    A[Weekly Review] --> B[task-status]
+    B --> C[complexity]
     C --> D{High complexity?}
-    D -->|Yes| E[/break-down]
+    D -->|Yes| E[break-down]
     D -->|No| F{Blockers?}
     E --> F
-    F -->|Yes| G[/research]
+    F -->|Yes| G[research]
     F -->|No| H[Continue]
     G --> H
 ```
