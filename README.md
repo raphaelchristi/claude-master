@@ -236,27 +236,42 @@ graph TD
 
 ## 🛠️ Installation & Setup
 
-### Global Installation (Recommended)
+### 🚀 **Automated Installation** (Recommended)
 ```bash
 # Clone this repository
 git clone https://github.com/raphaelchristi/claude-taskmaster-integration
 cd claude-taskmaster-integration
 
-# Install globally
+# Interactive installation (choose global/local/both)
 ./install.sh
 
-# Verify installation
-/project-setup --help
+# Or use direct options:
+./install.sh --global    # Install globally (~/.claude/)
+./install.sh --local     # Install locally (current project)
+./install.sh --both      # Install both globally and locally
+./install.sh --help      # Show all options
 ```
 
-### Manual Installation
+### 📋 **Installation Types**
+
+| Type | Command | Best For | Location |
+|------|---------|----------|----------|
+| **Global** | `./install.sh --global` | Daily use across all projects | `~/.claude/` |
+| **Local** | `./install.sh --local` | Project-specific customization | `./commands/`, `./CLAUDE.md` |
+| **Both** | `./install.sh --both` | Global access + local customization | Both locations |
+
+### 🔧 **Manual Installation**
 ```bash
-# Copy commands to Claude directory
+# Global installation
 cp -r commands ~/.claude/
 cp CLAUDE.md ~/.claude/
 
-# Make commands executable
-chmod +x ~/.claude/commands/*.md
+# Local installation  
+cp -r commands ./
+cp CLAUDE.md ./
+
+# Verify installation
+/project-setup --help
 ```
 
 ## 📚 Documentation
