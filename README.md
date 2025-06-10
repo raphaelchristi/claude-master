@@ -63,38 +63,63 @@ cp CLAUDE.md ~/.claude/
 ## 🔄 Development Workflows
 
 ### 🚀 **New Project Workflow**
-```
-/project-setup
-    ↓
-/create-prd
-    ↓
-/parse-prd
-    ↓
-/complexity
-    ↓
-Complex tasks? ──Yes──> /break-down ─┐
-    │                                │
-    │                                ↓
-    └─No─────> /next-task <──────────┘
-                 ↓
-            Implement
-                 ↓
-           /complete-task
-                 ↓
-           More tasks? ──Yes──> [back to /next-task]
-                 │
-                No
-                 ↓
-         Project Complete
+```mermaid
+graph TD
+    A[/project-setup] --> B[/create-prd]
+    B --> C[/parse-prd]
+    C --> D[/complexity]
+    D --> E{Complex tasks?}
+    E -->|Yes| F[/break-down]
+    E -->|No| G[/next-task]
+    F --> G
+    G --> H[Implement]
+    H --> I[/complete-task]
+    I --> J{More tasks?}
+    J -->|Yes| G
+    J -->|No| K[Project Complete]
 ```
 
-### 📈 **Daily Development**
-```bash
-/task-status     # Morning project check
-/next-task       # Get today's priority
-# ... implement task ...
-/complete-task 5 # Mark complete
-# Repeat as needed
+### 📈 **Daily Development Pipeline**
+```mermaid
+graph TD
+    A[Start Day] --> B[/task-status]
+    B --> C[/next-task]
+    C --> D{Task clear?}
+    D -->|No| E[/research]
+    D -->|Complex| F[/break-down]
+    D -->|Yes| G[Implement]
+    E --> G
+    F --> C
+    G --> H[/complete-task]
+    H --> I{More time?}
+    I -->|Yes| C
+    I -->|No| J[End Day]
+```
+
+### 🔄 **Requirement Change Pipeline**
+```mermaid
+graph TD
+    A[Requirements Change] --> B[/update-prd]
+    B --> C[/complexity]
+    C --> D{New complex tasks?}
+    D -->|Yes| E[/break-down]
+    D -->|No| F[/task-status]
+    E --> F
+    F --> G[Continue Development]
+```
+
+### 🧪 **Quality Assurance Pipeline**
+```mermaid
+graph TD
+    A[Weekly Review] --> B[/task-status]
+    B --> C[/complexity]
+    C --> D{High complexity?}
+    D -->|Yes| E[/break-down]
+    D -->|No| F{Blockers?}
+    E --> F
+    F -->|Yes| G[/research]
+    F -->|No| H[Continue]
+    G --> H
 ```
 
 ## 🛠️ Installation & Setup
@@ -172,6 +197,47 @@ chmod +x ~/.claude/commands/*.md
 ```
 
 ## 🌟 Key Features
+
+### 🏗️ **System Architecture**
+```mermaid
+graph TD
+    A[Claude Code] --> B[TaskMaster Integration]
+    B --> C[PRD Parser]
+    B --> D[Task Generator]
+    B --> E[Complexity Analyzer]
+    B --> F[Dependency Manager]
+    
+    C --> G[Tasks Database]
+    D --> G
+    E --> H[Reports]
+    F --> G
+    
+    I[AI Models] --> J[Main Model]
+    I --> K[Research Model]
+    I --> L[Fallback Model]
+    
+    J --> D
+    K --> E
+    L --> F
+    
+    G --> M[Individual Task Files]
+    H --> N[Complexity Reports]
+```
+
+### 📊 **Data Flow Pipeline**
+```mermaid
+graph LR
+    A[PRD Document] --> B[Task Generation]
+    B --> C[Complexity Analysis]
+    C --> D[Dependency Mapping]
+    D --> E[Implementation]
+    E --> F[Progress Tracking]
+    F --> G[Completion Metrics]
+    
+    H[Research Data] --> C
+    I[User Feedback] --> B
+    J[Performance Data] --> F
+```
 
 ### ✨ **AI-Powered Intelligence**
 - Automatic task generation from requirements
