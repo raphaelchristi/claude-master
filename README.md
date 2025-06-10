@@ -12,53 +12,48 @@ Stop drowning in tickets. Stop guessing what to build next. Stop pretending proj
 [![Framework](https://img.shields.io/badge/Framework-AI--First-ff6b6b.svg)](https://github.com/raphaelchristi/claude-master)
 [![Vibe](https://img.shields.io/badge/Vibe-Coding-4ecdc4.svg)](https://github.com/raphaelchristi/claude-master)
 
-## 🔥 Why This Framework Exists
+## What This Framework Solves
 
-**Because traditional project management sucks for developers:**
+**Claude Master** addresses the core challenges developers face with project management:
 
-❌ Jira makes you want to cry  
-❌ Trello is just fancy sticky notes  
-❌ Linear costs more than your coffee addiction  
-❌ GitHub Projects is... well, it tries  
+**Context Loss**: Traditional tools don't understand your codebase or technical decisions  
+**Task Ambiguity**: Tickets that say "implement auth" without breaking down the actual work  
+**Dependency Hell**: Blocked tasks and unclear sequencing that kills momentum  
+**Research Overhead**: Constantly context-switching between coding and researching best practices  
 
-✅ **Claude Master**: AI that actually understands your codebase  
-✅ **Contextual Intelligence**: Knows what you're building before you do  
-✅ **Zero Ceremony**: No standups, no ceremonies, just pure coding flow  
-✅ **Vibe-Driven Development**: Work with energy, not against bureaucracy  
+**Claude Master provides:**
+- **Contextual Intelligence**: AI that understands your project structure and technical context
+- **Intelligent Task Breakdown**: Complex features automatically split into manageable, sequential tasks  
+- **Research Integration**: On-demand technical guidance without leaving your development flow
+- **Dependency Management**: Clear task sequencing based on actual technical dependencies
 
-## 🧠 The Framework Philosophy
+## Framework Philosophy
 
-**Claude Master** isn't just another tool - it's a development philosophy that embraces:
+**Claude Master** is built around three core principles:
 
-### 🎯 **AI-First Thinking**
-Your AI should understand your project context, not just execute random commands. Claude Master creates persistent project intelligence that grows with your codebase.
+### AI-First Development
+Your development tools should understand your project context, not just execute isolated commands. Claude Master creates persistent project intelligence that evolves with your codebase.
 
-### ⚡ **Vibe-Driven Development** 
-Work when you're in flow. The framework adapts to your energy, not the other way around. No daily standups, no sprint ceremonies - just pure coding momentum.
+### Contextual Intelligence
+- 12 essential commands that integrate with your project structure
+- AI-powered task generation from requirements to actionable code
+- Intelligent complexity analysis that prevents scope creep
+- Dependency management based on actual technical relationships
+- Research-backed development guidance contextual to your stack
 
-### 🔥 **Zero Ceremony, Maximum Output**
-Skip the meetings. Skip the planning poker. Skip the retrospectives. Let AI handle the boring stuff while you build the future.
+## Quick Start
 
-### 🧠 **Contextual Intelligence**
-- **12 Essential Slash Commands** that actually make sense
-- **AI-Powered Task Generation** from vague ideas to actionable code
-- **Intelligent Complexity Analysis** that prevents scope creep
-- **Dependency Management** that doesn't make you want to quit
-- **Research-Backed Development** guidance when you're stuck
-
-## ⚡ Get Started in 60 Seconds
-
-### 🚀 **One-Command Setup**
+### One-Command Setup
 ```bash
 # Clone the framework
 git clone https://github.com/raphaelchristi/claude-master
 cd claude-master
 
-# Install everything (seriously, it's that easy)
+# Install everything
 ./install.sh --complete
 ```
 
-### 🎯 **Start Your First Project**
+### Start Your First Project
 ```bash
 /project-setup    # AI initializes your project structure
 /create-prd      # Chat with AI to define what you're building  
@@ -66,11 +61,11 @@ cd claude-master
 /next-task       # AI tells you exactly what to code next
 ```
 
-**That's it.** No configuration files. No YAML hell. No "getting started" tutorials that take 3 hours.
+**That's it.** No configuration files. No complex setup. No lengthy tutorials.
 
-## 🎮 How You Actually Use This Framework
+## How You Use This Framework
 
-### 🔥 **Slash Commands** (The Fast Lane)
+### Slash Commands (Direct Execution)
 ```bash
 /project-setup          # AI sets up your entire project structure
 /create-prd            # AI interviews you about what you want to build
@@ -78,15 +73,15 @@ cd claude-master
 /complete-task 5       # AI validates your work and updates the plan
 ```
 
-### 🧠 **Enhanced Commands** (When You Need More Control)
+### Enhanced Commands (With Parameters)
 ```bash
 /research "authentication best practices for React apps"
 /quick-task "Add loading spinners to all form buttons"  
-/break-down 12         # Split complex task into bite-sized pieces
+/break-down 12         # Split complex task into manageable pieces
 /complexity            # AI analyzes your project's complexity
 ```
 
-### 💬 **Natural Language** (Just Talk to Your AI)
+### Natural Language (Conversational)
 ```bash
 "Show me what I should work on next"
 "This task seems too complex, help me break it down"
@@ -94,48 +89,48 @@ cd claude-master
 "How's my project looking? Any blockers?"
 ```
 
-### 🎯 **The Vibe Check** 
-Pick your mode based on your energy level:
-- **High energy**: Slash commands for rapid execution
-- **Medium energy**: Enhanced commands for guided work  
-- **Low energy**: Natural language for exploration and planning
+### Usage Modes
+Pick your interaction style based on the situation:
+- **Direct commands**: For rapid execution of known actions
+- **Enhanced commands**: For commands that need specific parameters  
+- **Natural language**: For exploration, planning, and guidance
 
-## 🎯 **The Framework Command Arsenal**
+## Framework Commands
 
-### 🏗️ **Foundation Commands** (Set Up Once, Build Forever)
+### Foundation Commands
 ```bash
 /project-setup          # AI builds your project scaffolding
-/models                # Configure AI models for maximum performance
+/models                # Configure AI models for performance
 ```
 
-### 📝 **Vision Commands** (Turn Ideas Into Plans)  
+### Planning Commands
 ```bash
 /create-prd            # AI interviews you about your vision
 /update-prd            # Evolve your requirements as you learn
-/parse-prd             # AI generates structured tasks from chaos
+/parse-prd             # AI generates structured tasks from requirements
 ```
 
-### 🚀 **Daily Driver Commands** (Your Coding Flow)
+### Daily Development Commands
 ```bash
-/task-status           # AI shows project health in one glance
+/task-status           # AI shows project health at a glance
 /next-task             # AI picks your next task based on dependencies
 /complete-task 5       # AI validates completion and updates everything
 /quick-task "fix bug"  # AI instantly adds urgent tasks to your backlog
 ```
 
-### 🧠 **Power User Commands** (When Shit Gets Complex)
+### Analysis Commands
 ```bash
 /complexity            # AI analyzes project complexity and risks
-/break-down 15         # AI splits overwhelming tasks into manageable pieces  
+/break-down 15         # AI splits complex tasks into manageable pieces  
 /research "topic"      # AI researches best practices and patterns
 ```
 
-## 🔥 **Framework Workflows** (The Magic Happens Here)
+## Framework Workflows
 
-### 🚀 **"Zero to Shipping" Workflow**
+### "Zero to Shipping" Workflow
 ```mermaid
 graph TD
-    A[💡 Idea] --> B[/project-setup]
+    A[Idea] --> B[/project-setup]
     B --> C[/create-prd] 
     C --> D[/parse-prd]
     D --> E[/complexity]
@@ -143,46 +138,46 @@ graph TD
     F -->|Yes| G[/break-down]
     F -->|No| H[/next-task]
     G --> H
-    H --> I[🔥 Code]
+    H --> I[Code]
     I --> J[/complete-task]
     J --> K{More features?}
     K -->|Yes| H
-    K -->|No| L[🚀 Ship It]
+    K -->|No| L[Ship It]
 ```
 
-### ⚡ **"Daily Coding Flow" Workflow**  
+### "Daily Coding Flow" Workflow  
 ```mermaid
 graph TD
-    A[🌅 Start Day] --> B[/task-status]
+    A[Start Day] --> B[/task-status]
     B --> C[/next-task]
     C --> D{Clear?}
-    D -->|Nope| E[/research]
+    D -->|No| E[/research]
     D -->|Complex| F[/break-down]  
-    D -->|Let's go| G[🔥 Code]
+    D -->|Yes| G[Code]
     E --> G
     F --> C
     G --> H[/complete-task]
-    H --> I{Energy left?}
+    H --> I{More time?}
     I -->|Yes| C
-    I -->|No| J[🍕 Pizza time]
+    I -->|No| J[End day]
 ```
 
-### 🧠 **"Problem Solving" Workflow**
+### "Problem Solving" Workflow
 ```mermaid
 graph TD
-    A[😤 Stuck] --> B[/research topic]
+    A[Stuck] --> B[/research topic]
     B --> C{Clearer now?}
     C -->|Still confused| D[Ask Claude naturally]
     C -->|Getting there| E[/break-down task]
     D --> F[Get unstuck]
     E --> G[/next-task]
     F --> G
-    G --> H[🔥 Back to coding]
+    G --> H[Back to coding]
 ```
 
-## ⚡ **Real-World Framework Usage** 
+## Real-World Framework Usage 
 
-### 🎯 **Building a SaaS in Weekend Mode**
+### Building a SaaS in Weekend Mode
 ```bash
 # Friday night - scope the idea
 /project-setup
@@ -209,7 +204,7 @@ graph TD
 # → 80% complete, 2 blockers identified
 ```
 
-### 🔥 **Enterprise Project Mode**
+### Enterprise Project Mode
 ```bash
 # Week 1 - stakeholder alignment
 /create-prd
@@ -227,7 +222,7 @@ graph TD
 /complete-task X  # Mark progress
 ```
 
-### 🧠 **Learning New Tech Mode**
+### Learning New Tech Mode
 ```bash
 # Exploring new framework
 /quick-task "Learn Vue 3 composition API"
@@ -305,9 +300,9 @@ graph TD
     G --> H
 ```
 
-## 🚀 **Framework Installation** (Actually Easy)
+## Framework Installation
 
-### 🎯 **What You Need** (The Boring Stuff)
+### Prerequisites
 ```bash
 # Node.js (because everything needs Node.js these days)
 # macOS: brew install node
@@ -318,13 +313,13 @@ graph TD
 npm install -g @anthropic-ai/claude-code
 ```
 
-### ⚡ **AI Model Keys** (Optional But You Want These)
-- **OpenAI API key** - For the smart models that actually work
-- **Anthropic API key** - For Claude models (obviously)  
-- **Google API key** - For Gemini when you want variety
-- **Perplexity API key** - For research that doesn't suck
+### AI Model Keys (Optional but Recommended)
+- **OpenAI API key** - For enhanced AI models
+- **Anthropic API key** - For Claude models  
+- **Google API key** - For Gemini models
+- **Perplexity API key** - For research capabilities
 
-### 🔥 **Install the Framework** (One Command to Rule Them All)
+### Install the Framework
 ```bash
 # Get the framework
 git clone https://github.com/raphaelchristi/claude-master
@@ -334,14 +329,14 @@ cd claude-master
 ./install.sh --complete
 ```
 
-**That's it.** The installer handles:
-- ✅ Checks if you have the right dependencies
-- ✅ Installs Claude Code CLI if you forgot
-- ✅ Sets up the framework globally and locally  
-- ✅ Configures TaskMaster AI with your API keys
-- ✅ Gives you a working system in under 2 minutes
+**The installer automatically:**
+- Checks for required dependencies
+- Installs Claude Code CLI if missing
+- Sets up the framework globally and locally  
+- Configures TaskMaster AI with your API keys
+- Provides a working system in under 2 minutes
 
-### 🎯 **Installation Modes** (Pick Your Vibe)
+### Installation Modes
 ```bash
 ./install.sh --global    # Use across all projects (recommended)
 ./install.sh --local     # This project only
@@ -518,27 +513,27 @@ graph LR
 - Real-time project health monitoring
 - Comprehensive documentation
 
-## 📊 **Framework Performance** (The Numbers Don't Lie)
+## Framework Performance
 
-**What happens when you actually use this framework:**
+**Expected improvements when using this framework:**
 
-### 🚀 **Velocity Gains**
-- **2-3x faster** project setup (no more "getting started" hell)
-- **40-60%** better task clarity (AI knows what you actually need to build)
-- **30-50%** fewer blocked tasks (dependencies handled intelligently)
-- **25-40%** better estimates (AI learns from your project patterns)
+### Velocity Gains
+- **2-3x faster** project setup and initialization
+- **40-60%** better task clarity and definition
+- **30-50%** fewer blocked tasks through intelligent dependency management
+- **25-40%** improved estimate accuracy through AI analysis
 
-### 🧠 **Mental Health Improvements**  
-- **0 daily standups** needed (AI tracks everything)
-- **No more sprint planning** ceremonies (AI handles prioritization)
-- **Instant context switching** (AI remembers where you left off)
-- **Reduced decision fatigue** (AI suggests next actions)
+### Workflow Improvements  
+- **Reduced context switching** through persistent project intelligence
+- **Streamlined planning** with AI-generated task breakdowns
+- **Faster decision making** with research-backed recommendations
+- **Improved task sequencing** based on actual dependencies
 
-### 💰 **The Real ROI**
-- **Weeks saved** on project planning and task breakdown
-- **Hours saved** daily on context switching and planning
-- **Stress reduced** from unclear requirements and blocked tasks
-- **Shipping velocity increased** from better task sequencing
+### Development ROI
+- **Time saved** on project planning and task breakdown
+- **Reduced overhead** from context switching and manual planning
+- **Better outcomes** from clearer requirements and task definition
+- **Increased shipping velocity** through optimized task sequencing
 
 ## 🔧 Configuration
 
@@ -579,11 +574,11 @@ graph LR
     └── complexity-*.json    # Analysis reports
 ```
 
-## 🤝 **Join the Framework Revolution**
+## Contributing
 
-This framework gets better when more developers use it. Here's how to contribute:
+This framework improves with community contributions. Here's how to help:
 
-### 🔥 **Add Your Own Commands**
+### Add Your Own Commands
 ```bash
 # Fork the repo
 git clone https://github.com/raphaelchristi/claude-master
@@ -594,48 +589,40 @@ cd claude-master
 # Submit a PR with examples
 ```
 
-### 🧠 **Share Your Workflows**
-Found a killer workflow pattern? Add it to `examples/` and show other developers how to level up their game.
+### Share Your Workflows
+Found an effective workflow pattern? Add it to `examples/` and help other developers improve their process.
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-## 🙏 **Framework Credits**
+## Credits
 
 **Built on the shoulders of giants:**
-- **Anthropic** - For Claude Code and making AI that doesn't suck
-- **[TaskMaster AI](https://github.com/eyaltoledano/claude-task-master)** - For the core task management engine that actually works
-- **Open Source Community** - For showing us that frameworks can be beautiful and functional
+- **Anthropic** - For Claude Code and advanced AI capabilities
+- **[TaskMaster AI](https://github.com/eyaltoledano/claude-task-master)** - For the core task management engine
+- **Open Source Community** - For inspiration and continuous improvement
 
-## 📞 **Get Help & Stay Connected**
+## Support & Community
 
-- 📚 **[Framework Docs](./CLAUDE.md)** - Deep dive into the framework
-- 🐛 **[Bug Reports](https://github.com/raphaelchristi/claude-master/issues)** - Found something broken? Let us know
-- 💬 **[Community Discussions](https://github.com/raphaelchristi/claude-master/discussions)** - Share workflows, ask questions
-- 🚀 **[Feature Requests](https://github.com/raphaelchristi/claude-master/issues/new)** - What commands should we build next?
+- **[Framework Documentation](./CLAUDE.md)** - Complete framework guide
+- **[Bug Reports](https://github.com/raphaelchristi/claude-master/issues)** - Report issues and bugs
+- **[Community Discussions](https://github.com/raphaelchristi/claude-master/discussions)** - Share workflows and ask questions
+- **[Feature Requests](https://github.com/raphaelchristi/claude-master/issues/new)** - Suggest new commands and features
 
 ---
 
-## 🎯 **Ready to Stop Fighting Your Tools?**
+## Ready to Start?
 
-**Traditional project management makes you slow. Claude Master makes you fast.**
+**Claude Master transforms how you approach development projects.**
 
 ```bash
-# Stop procrastinating. Start building.
+# Get started now
 git clone https://github.com/raphaelchristi/claude-master
 cd claude-master && ./install.sh --complete
 
-# Your first AI-powered project starts now
+# Initialize your first AI-powered project
 /project-setup
 ```
 
-**The future of development isn't about more tools. It's about smarter workflows.**
-
----
-
-⭐ **Star this repo** if Claude Master saved you from another soul-crushing sprint planning meeting
-
-🔄 **Fork it** and build your own command arsenal
-
-🚀 **Ship faster** with AI that actually understands your code
+**Stop fighting your tools. Start building with intelligent workflows.**
