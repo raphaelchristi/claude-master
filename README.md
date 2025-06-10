@@ -259,8 +259,9 @@ claude --version
 
 **Optional (but recommended):**
 - OpenAI API key for enhanced AI models
-- Anthropic API key for Claude models
+- Anthropic API key for Claude models  
 - Google API key for Gemini models
+- Perplexity API key for research features
 
 ### 🚀 **Automated Installation** (Recommended)
 ```bash
@@ -275,6 +276,8 @@ cd claude-taskmaster-integration
 ./install.sh --global    # Install globally (~/.claude/)
 ./install.sh --local     # Install locally (current project)
 ./install.sh --both      # Install both globally and locally
+./install.sh --complete  # Complete setup (integration + TaskMaster MCP)
+./install.sh --mcp-only  # Install TaskMaster MCP only
 ./install.sh --help      # Show all options
 ```
 
@@ -282,7 +285,8 @@ cd claude-taskmaster-integration
 > - Checks for Node.js and npm
 > - Installs Claude Code CLI if missing (`npm install -g @anthropic-ai/claude-code`)
 > - Creates necessary directory structure
-> - Provides guidance for API key configuration
+> - Can install TaskMaster AI MCP server with API key configuration
+> - Provides step-by-step guidance for manual setup
 
 ### 📋 **Installation Types**
 
@@ -305,6 +309,42 @@ cp CLAUDE.md ./
 # Verify installation
 /project-setup --help
 ```
+
+### 🔌 **TaskMaster AI MCP Setup**
+
+After installing the integration, you need to add the TaskMaster AI MCP server to Claude Code:
+
+#### **Automated MCP Installation**
+```bash
+# Complete setup (includes MCP installation)
+./install.sh --complete
+
+# Or install MCP only
+./install.sh --mcp-only
+```
+
+#### **Manual MCP Installation**
+```bash
+# User scope (recommended - available in all projects)
+claude mcp add taskmaster-ai -s user -- npx -y --package=task-master-ai task-master-ai
+
+# With API keys for enhanced features
+claude mcp add taskmaster-ai -s user \
+  -e ANTHROPIC_API_KEY=your_key \
+  -e OPENAI_API_KEY=your_key \
+  -e PERPLEXITY_API_KEY=your_key \
+  -- npx -y --package=task-master-ai task-master-ai
+
+# Verify MCP installation
+claude mcp list
+```
+
+#### **MCP Scope Options**
+| Scope | Command | Availability |
+|-------|---------|--------------|
+| **User** | `-s user` | All your projects (recommended) |
+| **Local** | (default) | Current project only |
+| **Project** | `-s project` | Shared with team via .mcp.json |
 
 ## 📚 Documentation
 

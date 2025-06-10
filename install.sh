@@ -22,6 +22,8 @@ show_usage() {
     echo -e "  ${GREEN}./install.sh --global${NC}        Install globally (~/.claude/)"
     echo -e "  ${GREEN}./install.sh --local${NC}         Install locally (current project)"
     echo -e "  ${GREEN}./install.sh --both${NC}          Install both globally and locally"
+    echo -e "  ${GREEN}./install.sh --complete${NC}      Complete setup (integration + MCP)"
+    echo -e "  ${GREEN}./install.sh --mcp-only${NC}      Install TaskMaster MCP only"
     echo -e "  ${GREEN}./install.sh --help${NC}          Show this help"
     echo ""
     echo -e "${YELLOW}Installation Types:${NC}"
@@ -117,6 +119,93 @@ install_local() {
     echo -e "${GREEN}✅ Local installation completed!${NC}"
 }
 
+# Function to install TaskMaster AI MCP
+install_taskmaster_mcp() {
+    echo -e "${PURPLE}🔌 Installing TaskMaster AI MCP Server...${NC}"
+    
+    # Check if claude command is available
+    if ! command -v claude &> /dev/null; then
+        echo -e "${RED}❌ Claude CLI not found. Please run global installation first.${NC}"
+        return 1
+    fi
+    
+    echo -e "${BLUE}Adding TaskMaster AI MCP to Claude Code...${NC}"
+    
+    # Ask for scope preference
+    echo -e "${YELLOW}Choose MCP installation scope:${NC}"
+    echo -e "  ${GREEN}1)${NC} User scope (available in all your projects) ${BLUE}[Recommended]${NC}"
+    echo -e "  ${GREEN}2)${NC} Local scope (current project only)"
+    echo -e "  ${GREEN}3)${NC} Project scope (shared with team via .mcp.json)"
+    echo ""
+    
+    while true; do
+        read -p "Enter your choice (1-3): " mcp_choice
+        case $mcp_choice in
+            1)
+                scope="user"
+                break
+                ;;
+            2)
+                scope=""
+                break
+                ;;
+            3)
+                scope="project"
+                break
+                ;;
+            *)
+                echo -e "${RED}Invalid choice. Please enter 1-3.${NC}"
+                ;;
+        esac
+    done
+    
+    # Ask about API keys
+    echo ""
+    echo -e "${YELLOW}Do you want to configure API keys now? (y/n)${NC}"
+    read -p "Configure API keys: " config_keys
+    
+    # Build command
+    if [ "$scope" = "" ]; then
+        cmd="claude mcp add taskmaster-ai"
+    else
+        cmd="claude mcp add taskmaster-ai -s $scope"
+    fi
+    
+    if [ "$config_keys" = "y" ] || [ "$config_keys" = "Y" ]; then
+        echo -e "${BLUE}Enter your API keys (press Enter to skip):${NC}"
+        
+        read -p "Anthropic API Key: " anthropic_key
+        read -p "OpenAI API Key: " openai_key
+        read -p "Perplexity API Key: " perplexity_key
+        
+        if [ ! -z "$anthropic_key" ]; then
+            cmd="$cmd -e ANTHROPIC_API_KEY=$anthropic_key"
+        fi
+        if [ ! -z "$openai_key" ]; then
+            cmd="$cmd -e OPENAI_API_KEY=$openai_key"
+        fi
+        if [ ! -z "$perplexity_key" ]; then
+            cmd="$cmd -e PERPLEXITY_API_KEY=$perplexity_key"
+        fi
+    fi
+    
+    cmd="$cmd -- npx -y --package=task-master-ai task-master-ai"
+    
+    echo -e "${BLUE}Running: $cmd${NC}"
+    
+    if eval $cmd; then
+        echo -e "${GREEN}✅ TaskMaster AI MCP installed successfully!${NC}"
+        echo -e "${BLUE}Verifying installation...${NC}"
+        claude mcp list
+        return 0
+    else
+        echo -e "${RED}❌ Failed to install TaskMaster AI MCP${NC}"
+        echo -e "${YELLOW}You can install manually with:${NC}"
+        echo -e "${BLUE}$cmd${NC}"
+        return 1
+    fi
+}
+
 # Function for interactive installation
 interactive_install() {
     echo -e "${BLUE}🚀 Claude + TaskMaster Integration Installer${NC}"
@@ -125,11 +214,12 @@ interactive_install() {
     echo -e "  ${GREEN}1)${NC} Global installation (available in all projects) ${BLUE}[Recommended]${NC}"
     echo -e "  ${GREEN}2)${NC} Local installation (current project only)"
     echo -e "  ${GREEN}3)${NC} Both global and local"
-    echo -e "  ${GREEN}4)${NC} Show help and exit"
+    echo -e "  ${GREEN}4)${NC} Complete setup (install integration + TaskMaster MCP)"
+    echo -e "  ${GREEN}5)${NC} Show help and exit"
     echo ""
     
     while true; do
-        read -p "Enter your choice (1-4): " choice
+        read -p "Enter your choice (1-5): " choice
         case $choice in
             1)
                 check_claude
@@ -148,11 +238,18 @@ interactive_install() {
                 break
                 ;;
             4)
+                check_claude
+                install_global
+                echo ""
+                install_taskmaster_mcp
+                break
+                ;;
+            5)
                 show_usage
                 exit 0
                 ;;
             *)
-                echo -e "${RED}Invalid choice. Please enter 1-4.${NC}"
+                echo -e "${RED}Invalid choice. Please enter 1-5.${NC}"
                 ;;
         esac
     done
@@ -172,6 +269,16 @@ case "${1:-}" in
         install_global
         echo ""
         install_local
+        ;;
+    --complete)
+        check_claude
+        install_global
+        echo ""
+        install_taskmaster_mcp
+        ;;
+    --mcp-only)
+        check_claude
+        install_taskmaster_mcp
         ;;
     --help|-h)
         show_usage
@@ -198,9 +305,17 @@ echo -e "${YELLOW}📚 Documentation:${NC}"
 echo -e "${BLUE}• Complete guide: ~/.claude/CLAUDE.md (global) or ./CLAUDE.md (local)${NC}"
 echo -e "${BLUE}• Commands help: ~/.claude/commands/README.md${NC}"
 echo ""
-echo -e "${YELLOW}⚠️  Important Notes:${NC}"
-echo -e "${BLUE}• TaskMaster AI MCP server will be installed automatically on first use${NC}"
-echo -e "${BLUE}• API keys (OpenAI, Anthropic, etc.) need to be configured during setup${NC}"
-echo -e "${BLUE}• Run '/models' command to configure AI models after installation${NC}"
+echo -e "${YELLOW}⚠️  Next Steps - TaskMaster AI MCP Setup:${NC}"
+echo -e "${BLUE}1. Add TaskMaster AI MCP server to Claude Code:${NC}"
+echo -e "   ${GREEN}claude mcp add taskmaster-ai -s user -- npx -y --package=task-master-ai task-master-ai${NC}"
+echo ""
+echo -e "${BLUE}2. (Optional) Add API keys for enhanced features:${NC}"
+echo -e "   ${GREEN}claude mcp add taskmaster-ai -s user -e ANTHROPIC_API_KEY=your_key -e OPENAI_API_KEY=your_key -- npx -y --package=task-master-ai task-master-ai${NC}"
+echo ""
+echo -e "${BLUE}3. Verify MCP installation:${NC}"
+echo -e "   ${GREEN}claude mcp list${NC}"
+echo ""
+echo -e "${BLUE}4. Start using TaskMaster commands:${NC}"
+echo -e "   ${GREEN}/project-setup${NC} (initialize your first project)"
 echo ""
 echo -e "${GREEN}🚀 Ready to revolutionize your development workflow!${NC}"
