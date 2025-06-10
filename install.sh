@@ -28,16 +28,54 @@ show_usage() {
     echo -e "  ${BLUE}Global:${NC}  Available in ALL projects (recommended for frequent use)"
     echo -e "  ${BLUE}Local:${NC}   Available only in current project (project-specific)"
     echo -e "  ${BLUE}Both:${NC}    Global + local copy for customization"
+    echo ""
+    echo -e "${YELLOW}Dependencies:${NC}"
+    echo -e "  ${BLUE}• Node.js${NC} (required for Claude Code CLI)"
+    echo -e "  ${BLUE}• Claude Code CLI${NC} (npm install -g @anthropic-ai/claude-code)"
+    echo -e "  ${BLUE}• TaskMaster AI${NC} (MCP server - installed automatically)"
 }
 
 # Function to check Claude Code installation
 check_claude() {
-    if [ ! -d "$HOME/.claude" ]; then
-        echo -e "${RED}❌ Claude Code directory not found at ~/.claude${NC}"
-        echo -e "${YELLOW}Please install Claude Code first: https://claude.ai/code${NC}"
-        exit 1
+    # Check if claude command exists
+    if ! command -v claude &> /dev/null; then
+        echo -e "${RED}❌ Claude Code CLI not found${NC}"
+        echo -e "${YELLOW}Installing Claude Code CLI...${NC}"
+        echo -e "${BLUE}Running: npm install -g @anthropic-ai/claude-code${NC}"
+        
+        if ! command -v npm &> /dev/null; then
+            echo -e "${RED}❌ npm not found. Please install Node.js first:${NC}"
+            echo -e "${YELLOW}  • macOS: brew install node${NC}"
+            echo -e "${YELLOW}  • Ubuntu/Debian: sudo apt install nodejs npm${NC}"
+            echo -e "${YELLOW}  • Windows: Download from https://nodejs.org${NC}"
+            exit 1
+        fi
+        
+        if npm install -g @anthropic-ai/claude-code; then
+            echo -e "${GREEN}✅ Claude Code CLI installed successfully!${NC}"
+        else
+            echo -e "${RED}❌ Failed to install Claude Code CLI${NC}"
+            echo -e "${YELLOW}Please install manually:${NC}"
+            echo -e "${BLUE}  npm install -g @anthropic-ai/claude-code${NC}"
+            echo -e "${YELLOW}Or visit: https://claude.ai/code${NC}"
+            exit 1
+        fi
+    else
+        echo -e "${GREEN}✅ Claude Code CLI found${NC}"
     fi
-    echo -e "${BLUE}📁 Found Claude directory at ~/.claude${NC}"
+    
+    # Check if Claude directory exists (created after first run)
+    if [ ! -d "$HOME/.claude" ]; then
+        echo -e "${YELLOW}⚠️  Claude directory not found at ~/.claude${NC}"
+        echo -e "${BLUE}This is normal for first-time installation.${NC}"
+        echo -e "${BLUE}The directory will be created when you first run Claude Code.${NC}"
+        
+        echo -e "${YELLOW}Creating basic Claude directory structure...${NC}"
+        mkdir -p "$HOME/.claude"
+        echo -e "${GREEN}✅ Created ~/.claude directory${NC}"
+    else
+        echo -e "${GREEN}✅ Found Claude directory at ~/.claude${NC}"
+    fi
 }
 
 # Function to install globally
@@ -159,5 +197,10 @@ echo ""
 echo -e "${YELLOW}📚 Documentation:${NC}"
 echo -e "${BLUE}• Complete guide: ~/.claude/CLAUDE.md (global) or ./CLAUDE.md (local)${NC}"
 echo -e "${BLUE}• Commands help: ~/.claude/commands/README.md${NC}"
+echo ""
+echo -e "${YELLOW}⚠️  Important Notes:${NC}"
+echo -e "${BLUE}• TaskMaster AI MCP server will be installed automatically on first use${NC}"
+echo -e "${BLUE}• API keys (OpenAI, Anthropic, etc.) need to be configured during setup${NC}"
+echo -e "${BLUE}• Run '/models' command to configure AI models after installation${NC}"
 echo ""
 echo -e "${GREEN}🚀 Ready to revolutionize your development workflow!${NC}"

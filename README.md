@@ -236,6 +236,32 @@ graph TD
 
 ## 🛠️ Installation & Setup
 
+### 📋 **Prerequisites**
+
+**Required Dependencies:**
+```bash
+# 1. Node.js (for Claude Code CLI)
+# macOS:
+brew install node
+
+# Ubuntu/Debian:
+sudo apt install nodejs npm
+
+# Windows:
+# Download from https://nodejs.org
+
+# 2. Claude Code CLI
+npm install -g @anthropic-ai/claude-code
+
+# 3. Verify installation
+claude --version
+```
+
+**Optional (but recommended):**
+- OpenAI API key for enhanced AI models
+- Anthropic API key for Claude models
+- Google API key for Gemini models
+
 ### 🚀 **Automated Installation** (Recommended)
 ```bash
 # Clone this repository
@@ -251,6 +277,12 @@ cd claude-taskmaster-integration
 ./install.sh --both      # Install both globally and locally
 ./install.sh --help      # Show all options
 ```
+
+> **✨ The install script automatically:**
+> - Checks for Node.js and npm
+> - Installs Claude Code CLI if missing (`npm install -g @anthropic-ai/claude-code`)
+> - Creates necessary directory structure
+> - Provides guidance for API key configuration
 
 ### 📋 **Installation Types**
 
