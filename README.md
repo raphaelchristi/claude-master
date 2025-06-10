@@ -6,7 +6,7 @@ Transform your development process with AI-powered project management, intellige
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue.svg)](https://claude.ai/code)
-[![TaskMaster](https://img.shields.io/badge/TaskMaster-AI-green.svg)](https://taskmaster.ai)
+[![TaskMaster](https://img.shields.io/badge/TaskMaster-AI-green.svg)](https://github.com/eyaltoledano/claude-task-master)
 
 ## 🎯 What is This?
 
@@ -435,7 +435,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ## 🙏 Acknowledgments
 
 - **Anthropic** for Claude Code
-- **TaskMaster AI** for the core task management engine
+- **[TaskMaster AI](https://github.com/eyaltoledano/claude-task-master)** for the core task management engine
 - **Open Source Community** for inspiration and feedback
 
 ## 📞 Support

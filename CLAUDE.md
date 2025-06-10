@@ -438,7 +438,7 @@ When adding new functionality:
 
 ## 📚 Additional Resources
 
-- **TaskMaster Documentation**: Core functionality and API reference
+- **[TaskMaster Documentation](https://github.com/eyaltoledano/claude-task-master)**: Core functionality and API reference
 - **Claude Code Guide**: Integration patterns and best practices
 - **Project Templates**: Starter PRDs and configurations
 - **Workflow Examples**: Real-world usage patterns
