@@ -38,6 +38,68 @@ cp CLAUDE.md ~/.claude/
 /next-task       # Start development!
 ```
 
+## 🎯 Three Ways to Use TaskMaster Integration
+
+### 1️⃣ **Slash Commands** (Direct Execution)
+```bash
+/project-setup          # Initialize new TaskMaster project
+/create-prd            # Start interactive PRD creation
+/next-task             # Get next priority task
+/complete-task 5       # Mark task 5 as complete
+```
+
+### 2️⃣ **Command + Query** (Enhanced Instructions)
+```bash
+/research "authentication best practices for React apps"
+/quick-task "Add loading spinners to all form buttons"
+/break-down 12 "focus on database schema migration"
+/update-prd "add mobile app requirements to existing web PRD"
+```
+
+### 3️⃣ **Natural Language** (AI-Powered Understanding)
+```bash
+"Show me the project status and what I should work on next"
+"Create a task for implementing user authentication"
+"Break down the payment integration task into smaller pieces"
+"Research the best way to handle file uploads in Node.js"
+```
+
+### 🚀 **When to Use Each Mode**
+
+| Mode | Best For | Example Use Case |
+|------|----------|------------------|
+| **Slash Commands** | Quick, direct actions | Daily workflow, known commands |
+| **Command + Query** | Specific requirements | Complex research, detailed tasks |
+| **Natural Language** | Exploratory work | Planning, problem-solving, learning |
+
+> **✨ Smart Context Integration**: The CLAUDE.md integration enables Claude Code to understand TaskMaster context automatically, allowing seamless switching between formal commands and natural conversation.
+
+### 🎯 **Usage Flexibility Examples**
+
+**All these achieve the same result:**
+```bash
+# Slash Command
+/task-status
+
+# Natural Language  
+"What's the current project status?"
+
+# Mixed Approach
+"Show me /task-status and suggest what to work on next"
+```
+
+**Research with different approaches:**
+```bash
+# Direct Command
+/research "React state management"
+
+# Enhanced Command
+/research 15 "focus on performance implications"
+
+# Natural Language
+"I need help with state management for task 15, especially performance"
+```
+
 ## 📋 Available Commands
 
 ### 🏗️ **Setup & Configuration**
