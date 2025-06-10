@@ -52,27 +52,29 @@ cp CLAUDE.md ~/.claude/
 ```bash
 /research "authentication best practices for React apps"
 /quick-task "Add loading spinners to all form buttons"
-/break-down 12 "focus on database schema migration"
-/update-prd "add mobile app requirements to existing web PRD"
+/research 12 "focus on performance optimization"
+/parse-prd --numTasks 15 "generate more granular tasks"
 ```
 
 ### 3️⃣ **Natural Language** (AI-Powered Understanding)
 ```bash
 "Show me the project status and what I should work on next"
 "Create a task for implementing user authentication"
-"Break down the payment integration task into smaller pieces"
-"Research the best way to handle file uploads in Node.js"
+"Help me research authentication patterns for my React app"
+"I need to break down task 15 into smaller subtasks"
 ```
 
 ### 🚀 **When to Use Each Mode**
 
-| Mode | Best For | Example Use Case |
-|------|----------|------------------|
-| **Slash Commands** | Quick, direct actions | Daily workflow, known commands |
-| **Command + Query** | Specific requirements | Complex research, detailed tasks |
-| **Natural Language** | Exploratory work | Planning, problem-solving, learning |
+| Mode | Best For | Example Use Case | Limitations |
+|------|----------|------------------|-------------|
+| **Slash Commands** | Quick, direct actions | Daily workflow, known commands | None - direct MCP execution |
+| **Command + Query** | Commands that accept parameters | Research topics, task descriptions | Limited to specific commands |
+| **Natural Language** | Conversational interaction | Planning, exploration, guidance | Depends on Claude Code interpretation |
 
-> **✨ Smart Context Integration**: The CLAUDE.md integration enables Claude Code to understand TaskMaster context automatically, allowing seamless switching between formal commands and natural conversation.
+> **✨ Smart Context Integration**: The CLAUDE.md integration enables Claude Code to understand TaskMaster context automatically. Natural language requests are interpreted and mapped to appropriate MCP commands when possible.
+
+> **⚠️ Note**: Command + Query syntax works only for commands that explicitly accept parameters. Natural language effectiveness depends on Claude Code's ability to interpret your intent and map it to the correct TaskMaster operations.
 
 ### 🎯 **Usage Flexibility Examples**
 
@@ -93,12 +95,60 @@ cp CLAUDE.md ~/.claude/
 # Direct Command
 /research "React state management"
 
-# Enhanced Command
-/research 15 "focus on performance implications"
+# Task-Specific Research
+/research 15
 
 # Natural Language
-"I need help with state management for task 15, especially performance"
+"I need help with state management patterns for React applications"
 ```
+
+### 📋 **Command Compatibility Guide**
+
+**✅ Commands that accept queries/parameters:**
+- `/research "topic"` or `/research taskId`
+- `/quick-task "description"`
+- `/parse-prd --numTasks X`
+- `/complete-task taskId`
+
+**⚠️ Commands with limited parameters:**
+- `/break-down taskId` (no additional text)
+- `/task-status` (no parameters)
+- `/next-task` (no parameters)
+- `/complexity` (no parameters)
+
+**🤖 Natural language works best for:**
+- Project planning and exploration
+- Getting guidance and explanations
+- Understanding task relationships
+- Learning about TaskMaster features
+
+### 💡 **Best Practices & Tips**
+
+**🎯 For Maximum Efficiency:**
+```bash
+# Start with slash commands for daily workflow
+/task-status → /next-task → [work] → /complete-task X
+
+# Use research for complex decisions
+/research "database migration patterns"
+/research 23  # Research specific task
+
+# Natural language for exploration
+"What should I focus on this week?"
+"How does task complexity affect my timeline?"
+```
+
+**⚠️ Common Pitfalls:**
+- Don't assume all commands accept additional text parameters
+- Natural language requires clear, specific requests
+- Some operations require multiple commands (setup → research → breakdown)
+- Task IDs must exist before referencing them
+
+**🔄 Recommended Workflow:**
+1. **Setup Phase**: Use direct commands (`/project-setup`, `/create-prd`)
+2. **Planning Phase**: Mix natural language with targeted research
+3. **Development Phase**: Primarily slash commands for speed
+4. **Problem Solving**: Natural language + research commands
 
 ## 📋 Available Commands
 
