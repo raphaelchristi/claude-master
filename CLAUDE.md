@@ -1,10 +1,10 @@
-# Claude Code + TaskMaster Integration
+# Claude Master
 
-IMPORTANT: This CLAUDE.md provides context for intelligent project management using TaskMaster AI. Claude should automatically understand TaskMaster commands and help users navigate the development workflow.
+IMPORTANT: This CLAUDE.md provides context for Claude Master - the ultimate AI-powered development workflow system. Claude should automatically understand TaskMaster commands and help users navigate intelligent project management.
 
 ## 🎯 Context for Claude
 
-**YOU MUST understand that this integration enables three interaction modes:**
+**YOU MUST understand that Claude Master enables three interaction modes:**
 1. **Direct MCP Commands**: `/project-setup`, `/next-task`, `/complexity` 
 2. **Enhanced Commands**: `/research "topic"`, `/quick-task "description"`
 3. **Natural Language**: Users can ask for project help in plain English

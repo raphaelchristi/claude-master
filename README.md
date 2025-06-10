@@ -1,16 +1,16 @@
-# Claude Code + TaskMaster AI Integration
+# Claude Master
 
-🚀 **Revolutionary Development Workflow Automation**
+🚀 **Revolutionary AI-Powered Development Workflow**
 
-Transform your development process with AI-powered project management, intelligent task generation, and automated workflow optimization.
+Transform your development process with intelligent project management, automated task generation, and seamless workflow optimization.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue.svg)](https://claude.ai/code)
-[![TaskMaster](https://img.shields.io/badge/TaskMaster-AI-green.svg)](https://github.com/eyaltoledano/claude-task-master)
+[![Claude Master](https://img.shields.io/badge/Claude-Master-purple.svg)](https://github.com/raphaelchristi/claude-master)
 
 ## 🎯 What is This?
 
-This integration combines **Claude Code** with **TaskMaster AI** to create a comprehensive development workflow system that includes:
+**Claude Master** is the ultimate AI-powered development companion that combines **Claude Code** with **TaskMaster AI** to create a comprehensive workflow automation system featuring:
 
 - **12 Essential Slash Commands** for project management
 - **AI-Powered Task Generation** from requirements
@@ -38,7 +38,7 @@ cp CLAUDE.md ~/.claude/
 /next-task       # Start development!
 ```
 
-## 🎯 Three Ways to Use TaskMaster Integration
+## 🎯 Three Ways to Use Claude Master
 
 ### 1️⃣ **Slash Commands** (Direct Execution)
 ```bash
@@ -266,8 +266,8 @@ claude --version
 ### 🚀 **Automated Installation** (Recommended)
 ```bash
 # Clone this repository
-git clone https://github.com/raphaelchristi/claude-taskmaster-integration
-cd claude-taskmaster-integration
+git clone https://github.com/raphaelchristi/claude-master
+cd claude-master
 
 # Interactive installation (choose global/local/both)
 ./install.sh
@@ -509,8 +509,8 @@ We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md)
 
 ### Development Setup
 ```bash
-git clone https://github.com/yourusername/claude-taskmaster-integration
-cd claude-taskmaster-integration
+git clone https://github.com/raphaelchristi/claude-master
+cd claude-master
 npm install
 npm run dev
 ```
@@ -528,8 +528,8 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ## 📞 Support
 
 - 📚 [Documentation](./CLAUDE.md)
-- 🐛 [Issue Tracker](https://github.com/raphaelchristi/claude-taskmaster-integration/issues)
-- 💬 [Discussions](https://github.com/raphaelchristi/claude-taskmaster-integration/discussions)
+- 🐛 [Issue Tracker](https://github.com/raphaelchristi/claude-master/issues)
+- 💬 [Discussions](https://github.com/raphaelchristi/claude-master/discussions)
 - 📧 [Email Support](mailto:raphael.christi@example.com)
 
 ---
@@ -540,5 +540,5 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ---
 
-[![GitHub stars](https://img.shields.io/github/stars/raphaelchristi/claude-taskmaster-integration.svg?style=social&label=Star)](https://github.com/raphaelchristi/claude-taskmaster-integration)
-[![GitHub forks](https://img.shields.io/github/forks/raphaelchristi/claude-taskmaster-integration.svg?style=social&label=Fork)](https://github.com/raphaelchristi/claude-taskmaster-integration/fork)
+[![GitHub stars](https://img.shields.io/github/stars/raphaelchristi/claude-master.svg?style=social&label=Star)](https://github.com/raphaelchristi/claude-master)
+[![GitHub forks](https://img.shields.io/github/forks/raphaelchristi/claude-master.svg?style=social&label=Fork)](https://github.com/raphaelchristi/claude-master/fork)

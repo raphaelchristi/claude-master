@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Claude + TaskMaster Integration Installer
-# This script installs the integration for Claude Code
+# Claude Master Installer
+# This script installs Claude Master - the ultimate AI-powered development workflow system
 
 set -e
 
@@ -15,7 +15,7 @@ NC='\033[0m' # No Color
 
 # Function to show usage
 show_usage() {
-    echo -e "${BLUE}Claude + TaskMaster Integration Installer${NC}"
+    echo -e "${BLUE}Claude Master Installer${NC}"
     echo ""
     echo -e "${YELLOW}Usage:${NC}"
     echo -e "  ${GREEN}./install.sh${NC}                 Interactive installation (recommended)"
@@ -208,7 +208,7 @@ install_taskmaster_mcp() {
 
 # Function for interactive installation
 interactive_install() {
-    echo -e "${BLUE}🚀 Claude + TaskMaster Integration Installer${NC}"
+    echo -e "${BLUE}🚀 Claude Master Installer${NC}"
     echo ""
     echo -e "${YELLOW}Choose installation type:${NC}"
     echo -e "  ${GREEN}1)${NC} Global installation (available in all projects) ${BLUE}[Recommended]${NC}"
