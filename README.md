@@ -63,20 +63,29 @@ cp CLAUDE.md ~/.claude/
 ## 🔄 Development Workflows
 
 ### 🚀 **New Project Workflow**
-```mermaid
-graph TD
-    A[/project-setup] --> B[/create-prd]
-    B --> C[/parse-prd]
-    C --> D[/complexity]
-    D --> E{Complex tasks?}
-    E -->|Yes| F[/break-down]
-    E -->|No| G[/next-task]
-    F --> G
-    G --> H[Implement]
-    H --> I[/complete-task]
-    I --> J{More tasks?}
-    J -->|Yes| G
-    J -->|No| K[Project Complete]
+```
+/project-setup
+    ↓
+/create-prd
+    ↓
+/parse-prd
+    ↓
+/complexity
+    ↓
+Complex tasks? ──Yes──> /break-down ─┐
+    │                                │
+    │                                ↓
+    └─No─────> /next-task <──────────┘
+                 ↓
+            Implement
+                 ↓
+           /complete-task
+                 ↓
+           More tasks? ──Yes──> [back to /next-task]
+                 │
+                No
+                 ↓
+         Project Complete
 ```
 
 ### 📈 **Daily Development**
@@ -93,7 +102,7 @@ graph TD
 ### Global Installation (Recommended)
 ```bash
 # Clone this repository
-git clone https://github.com/yourusername/claude-taskmaster-integration
+git clone https://github.com/raphaelchristi/claude-taskmaster-integration
 cd claude-taskmaster-integration
 
 # Install globally
@@ -254,9 +263,9 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ## 📞 Support
 
 - 📚 [Documentation](./CLAUDE.md)
-- 🐛 [Issue Tracker](https://github.com/yourusername/claude-taskmaster-integration/issues)
-- 💬 [Discussions](https://github.com/yourusername/claude-taskmaster-integration/discussions)
-- 📧 [Email Support](mailto:support@example.com)
+- 🐛 [Issue Tracker](https://github.com/raphaelchristi/claude-taskmaster-integration/issues)
+- 💬 [Discussions](https://github.com/raphaelchristi/claude-taskmaster-integration/discussions)
+- 📧 [Email Support](mailto:raphael.christi@example.com)
 
 ---
 
@@ -266,5 +275,5 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ---
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/claude-taskmaster-integration.svg?style=social&label=Star)](https://github.com/yourusername/claude-taskmaster-integration)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/claude-taskmaster-integration.svg?style=social&label=Fork)](https://github.com/yourusername/claude-taskmaster-integration/fork)
+[![GitHub stars](https://img.shields.io/github/stars/raphaelchristi/claude-taskmaster-integration.svg?style=social&label=Star)](https://github.com/raphaelchristi/claude-taskmaster-integration)
+[![GitHub forks](https://img.shields.io/github/forks/raphaelchristi/claude-taskmaster-integration.svg?style=social&label=Fork)](https://github.com/raphaelchristi/claude-taskmaster-integration/fork)
