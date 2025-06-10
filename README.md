@@ -130,16 +130,16 @@ Pick your interaction style based on the situation:
 ### "Zero to Shipping" Workflow
 ```mermaid
 graph TD
-    A[Idea] --> B[/project-setup]
-    B --> C[/create-prd] 
-    C --> D[/parse-prd]
-    D --> E[/complexity]
+    A[Idea] --> B[project-setup]
+    B --> C[create-prd] 
+    C --> D[parse-prd]
+    D --> E[complexity]
     E --> F{Too complex?}
-    F -->|Yes| G[/break-down]
-    F -->|No| H[/next-task]
+    F -->|Yes| G[break-down]
+    F -->|No| H[next-task]
     G --> H
     H --> I[Code]
-    I --> J[/complete-task]
+    I --> J[complete-task]
     J --> K{More features?}
     K -->|Yes| H
     K -->|No| L[Ship It]
@@ -148,15 +148,15 @@ graph TD
 ### "Daily Coding Flow" Workflow  
 ```mermaid
 graph TD
-    A[Start Day] --> B[/task-status]
-    B --> C[/next-task]
+    A[Start Day] --> B[task-status]
+    B --> C[next-task]
     C --> D{Clear?}
-    D -->|No| E[/research]
-    D -->|Complex| F[/break-down]  
+    D -->|No| E[research]
+    D -->|Complex| F[break-down]  
     D -->|Yes| G[Code]
     E --> G
     F --> C
-    G --> H[/complete-task]
+    G --> H[complete-task]
     H --> I{More time?}
     I -->|Yes| C
     I -->|No| J[End day]
@@ -165,12 +165,12 @@ graph TD
 ### "Problem Solving" Workflow
 ```mermaid
 graph TD
-    A[Stuck] --> B[/research topic]
+    A[Stuck] --> B[research topic]
     B --> C{Clearer now?}
     C -->|Still confused| D[Ask Claude naturally]
-    C -->|Getting there| E[/break-down task]
+    C -->|Getting there| E[break-down task]
     D --> F[Get unstuck]
-    E --> G[/next-task]
+    E --> G[next-task]
     F --> G
     G --> H[Back to coding]
 ```
