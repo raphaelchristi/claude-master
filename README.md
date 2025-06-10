@@ -513,29 +513,7 @@ graph LR
 - Real-time project health monitoring
 - Comprehensive documentation
 
-## Framework Performance
-
-**Expected improvements when using this framework:**
-
-### Velocity Gains
-- **2-3x faster** project setup and initialization
-- **40-60%** better task clarity and definition
-- **30-50%** fewer blocked tasks through intelligent dependency management
-- **25-40%** improved estimate accuracy through AI analysis
-
-### Workflow Improvements  
-- **Reduced context switching** through persistent project intelligence
-- **Streamlined planning** with AI-generated task breakdowns
-- **Faster decision making** with research-backed recommendations
-- **Improved task sequencing** based on actual dependencies
-
-### Development ROI
-- **Time saved** on project planning and task breakdown
-- **Reduced overhead** from context switching and manual planning
-- **Better outcomes** from clearer requirements and task definition
-- **Increased shipping velocity** through optimized task sequencing
-
-## 🔧 Configuration
+## Configuration
 
 ### Model Configuration
 ```json
