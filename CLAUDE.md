@@ -1,26 +1,94 @@
 # Claude Code + TaskMaster Integration
 
-This project integrates Claude Code with TaskMaster AI for intelligent project management and development workflow automation.
+IMPORTANT: This CLAUDE.md provides context for intelligent project management using TaskMaster AI. Claude should automatically understand TaskMaster commands and help users navigate the development workflow.
 
-## 🎯 Overview
+## 🎯 Context for Claude
 
-TaskMaster AI provides comprehensive project management capabilities with AI-powered task generation, complexity analysis, and intelligent workflow optimization. The integration includes 12 essential slash commands that transform how you manage development projects.
+**YOU MUST understand that this integration enables three interaction modes:**
+1. **Direct MCP Commands**: `/project-setup`, `/next-task`, `/complexity` 
+2. **Enhanced Commands**: `/research "topic"`, `/quick-task "description"`
+3. **Natural Language**: Users can ask for project help in plain English
 
-## 🚀 Quick Start
+**IMPORTANT: When users ask project management questions, automatically suggest appropriate TaskMaster commands.**
 
-### Initial Setup
+TaskMaster AI provides comprehensive project management capabilities with AI-powered task generation, complexity analysis, and intelligent workflow optimization. The integration includes 12 essential commands that transform development workflows.
+
+## 🚀 Essential Commands for Claude
+
+**ALWAYS suggest these commands based on user context:**
+
+### Initial Project Setup
 ```bash
-/project-setup    # Initialize TaskMaster and configure AI models
-/create-prd      # Create comprehensive Product Requirements Document
-/parse-prd       # Generate structured tasks from PRD
+/project-setup    # FIRST: Initialize TaskMaster and configure AI models
+/create-prd      # SECOND: Create Product Requirements Document
+/parse-prd       # THIRD: Generate structured tasks from PRD
 ```
 
-### Daily Workflow  
+### Daily Development Workflow  
 ```bash
-/task-status     # Check project health and progress
-/next-task       # Get next priority task based on dependencies
-# ... implement the task ...
-/complete-task 5 # Mark task complete with validation
+/task-status     # Morning: Check project health and progress
+/next-task       # Always: Get next priority task based on dependencies
+/complete-task X # Finish: Mark task complete with validation
+```
+
+### Problem Solving & Analysis
+```bash
+/complexity      # When planning: Analyze task complexity and risks
+/break-down X    # For complex tasks: Split into manageable subtasks
+/research "topic" # For uncertainty: Get technical guidance and best practices
+/quick-task "desc" # For urgent items: Add tasks quickly to backlog
+```
+
+**YOU MUST proactively suggest these commands when users express needs like:**
+- "What should I work on?" → `/next-task`
+- "This task is too complex" → `/break-down X`
+- "How's my project going?" → `/task-status`
+- "I need to research X" → `/research "X"`
+- "I need to add a quick task" → `/quick-task "description"`
+
+## ⚠️ Critical Guidelines for Claude
+
+### Command Execution Rules
+**YOU MUST follow these rules when suggesting commands:**
+
+1. **ALWAYS use exact MCP syntax**: `mcp__taskmaster-ai__command_name`
+2. **Required parameters**: Set `projectRoot` to current working directory
+3. **Parameter validation**: Check required vs optional parameters before execution
+4. **Error handling**: If command fails, suggest troubleshooting steps
+
+### Development Workflow Principles
+**IMPORTANT: Guide users through proper workflow:**
+
+1. **Project Initialization**: Always start with `/project-setup` for new projects
+2. **Requirements First**: Create PRD before generating tasks (`/create-prd` → `/parse-prd`)
+3. **Complexity Analysis**: Run `/complexity` before starting development
+4. **Task Breakdown**: Use `/break-down` for tasks rated 7+ complexity
+5. **Research Integration**: Use `/research` for technical uncertainties
+6. **Progress Monitoring**: Regular `/task-status` checks for project health
+
+### Common Patterns to Recognize
+**When users say...suggest:**
+- "Starting new project" → `/project-setup`
+- "Need to plan features" → `/create-prd`
+- "Ready to start coding" → `/next-task`
+- "Stuck on implementation" → `/research X`
+- "Task seems overwhelming" → `/break-down X`
+- "How's progress?" → `/task-status`
+- "Found a bug" → `/quick-task "fix bug description"`
+
+### Directory Structure Awareness
+**YOU MUST understand TaskMaster creates:**
+```
+.taskmaster/
+├── config.json              # Model configuration
+├── docs/
+│   ├── prd.txt              # Product Requirements
+│   └── prd-backup-*.txt     # Version history
+├── tasks/
+│   ├── tasks.json           # Tasks database
+│   └── task-*.md            # Individual task files
+└── reports/
+    └── complexity-*.json    # Analysis reports
 ```
 
 ## 📋 Command Reference
@@ -294,42 +362,61 @@ Research → Complexity → Dependencies → Progress → Metrics
     └── complexity-*.json    # Complexity analysis reports
 ```
 
-## 🚨 Troubleshooting
+## 🚨 Critical Troubleshooting for Claude
 
-### Common Issues & Solutions
+**IMPORTANT: When TaskMaster commands fail, YOU MUST guide users through these solutions:**
 
-**"TaskMaster not initialized"**
+### Initialization Issues
+**"TaskMaster not initialized" → YOU MUST suggest:**
 ```bash
-/project-setup  # Run complete setup
+/project-setup  # ALWAYS start here for new projects
 ```
 
-**"API key invalid"**  
+**"API key invalid" → YOU MUST suggest:**  
 ```bash
-/models  # Check and update model configuration
+/models  # Check and configure model settings
 ```
 
-**"No tasks available"**
+### Task Management Issues
+**"No tasks available" → YOU MUST guide through:**
 ```bash
-/create-prd  # Create requirements first
-/parse-prd   # Generate tasks from PRD
+/create-prd     # FIRST: Create requirements
+/parse-prd      # SECOND: Generate tasks from PRD
+/task-status    # THIRD: Verify tasks were created
 ```
 
-**"Task too complex"**
+**"Task too complex" → YOU MUST recommend:**
 ```bash
-/break-down [id]  # Split into subtasks
+/break-down [id]  # Split into manageable subtasks
+/research [id]    # Get implementation guidance
 ```
 
-**"Dependency issues"**
+**"Dependency issues" → YOU MUST troubleshoot:**
 ```bash
-/task-status  # Check for blockers
-# Resolve blocking tasks first
+/task-status  # Identify blocked tasks
+# Guide user to resolve blocking tasks first
 ```
 
-### Performance Optimization
+### Performance & Best Practices for Claude
+**YOU MUST advise users:**
 - Use research model sparingly for cost efficiency
-- Break down complex tasks early to improve estimates
-- Regular complexity analysis prevents technical debt
+- Break down complex tasks (7+ complexity) early
+- Run regular `/complexity` analysis to prevent technical debt
 - Monitor model performance with `/models`
+- Maintain consistent project structure
+
+### Command Parameter Guidelines for Claude
+**CRITICAL: YOU MUST validate parameters:**
+- `projectRoot`: ALWAYS set to current working directory
+- Task IDs: MUST exist before referencing
+- Descriptions: MUST be specific and actionable
+- File paths: MUST be absolute paths when required
+
+**Error Recovery Patterns YOU MUST follow:**
+1. If MCP command fails → Check parameters and retry
+2. If task not found → Run `/task-status` to list available tasks  
+3. If dependency issues → Guide through dependency resolution
+4. If model errors → Suggest `/models` configuration check
 
 ## 🎯 Success Metrics
 
@@ -356,6 +443,37 @@ When adding new functionality:
 - **Project Templates**: Starter PRDs and configurations
 - **Workflow Examples**: Real-world usage patterns
 
+## 🎯 Expected Claude Behavior
+
+**WHEN THIS CLAUDE.md IS ACTIVE, YOU MUST:**
+
+### 1. Proactive Command Suggestions
+- Automatically suggest TaskMaster commands based on user context
+- Guide users through proper workflow sequences
+- Recognize project management needs and map to commands
+
+### 2. Intelligent Command Execution  
+- Use correct MCP syntax: `mcp__taskmaster-ai__command_name`
+- Validate parameters before execution
+- Handle errors gracefully with troubleshooting guidance
+
+### 3. Project Context Awareness
+- Understand TaskMaster project structure and files
+- Recognize when projects need initialization
+- Track project state and suggest appropriate next steps
+
+### 4. Workflow Optimization
+- Guide users through efficient development patterns
+- Suggest breaking down complex tasks
+- Recommend research for technical uncertainties
+- Promote regular progress monitoring
+
+**REMEMBER: This integration transforms Claude from a coding assistant into an intelligent project management partner. Always prioritize helping users maintain organized, efficient development workflows.**
+
 ---
 
 **Ready to revolutionize your development workflow?** Start with `/project-setup`! 🚀
+
+---
+
+**Note: This CLAUDE.md file provides context for Claude Code to understand and effectively use TaskMaster AI integration. It should be placed in project roots or ~/.claude/ for automatic context loading.**
